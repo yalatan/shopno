@@ -5,7 +5,7 @@
 # Homework: shopno
  
 task dev incubator
-макет
+**[макет](https://github.com/yalatan/shopno/blob/master/testPage.jpg)**
 
 * сверстать PixelPerfect (для ширины макета)
 * кнопка в хедере скроллит к нижнему блоку "контакты" с формой отправки
