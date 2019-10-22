@@ -1,14 +1,14 @@
 function ready() {
     /*scroll down*/
     scroll_down.onclick = function() {
-        let q = document.documentElement.clientHeight;
-        let scrollHeight = Math.max(
+        var qHeight = document.documentElement.clientHeight;
+        var scrollHeight = Math.max(
             document.body.scrollHeight, document.documentElement.scrollHeight,
             document.body.offsetHeight, document.documentElement.offsetHeight,
             document.body.clientHeight, document.documentElement.clientHeight
         );
         window.scrollTo({
-            top: scrollHeight - q,
+            top: scrollHeight - qHeight,
             behavior: "smooth"
         });
 
@@ -45,8 +45,8 @@ function ready() {
             e.preventDefault();
             e.stopImmediatePropagation;
 
-            let thismodal = item;
-            let modal = thismodal.dataset.modal;
+            var thismodal = item;
+            var modal = thismodal.dataset.modal;
             console.log(modal);
             console.log(document.querySelector(modal).parentNode);
             document.querySelector(modal).parentNode.classList.add("open");
@@ -56,11 +56,11 @@ function ready() {
 
             document.onclick = function(e) {
                 console.log(e.target)
-                let targetM = e.target;
+                var targetM = e.target;
                 if (targetM.classList.contains("overlay")) {
                     console.log(targetM.querySelector(".modal"))
-                    let arr = targetM.querySelectorAll(".modal");
-                    for (let i = 0; i < arr.length; i++) {
+                    var arr = targetM.querySelectorAll(".modal");
+                    for (var i = 0; i < arr.length; i++) {
                         arr[i].classList.remove("open");
                     };
                     setTimeout(function() {

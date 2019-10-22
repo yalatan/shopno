@@ -149,7 +149,8 @@ $menu-size: 30px;
     @media screen and (max-width: $media-mobile) {
         font-size: 28px;
         line-height: 35px;
-        margin: auto 10px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
@@ -163,7 +164,8 @@ $menu-size: 30px;
     @media screen and (max-width: $media-mobile) {
         font-size: 16px;
         line-height: 20px;
-        margin: auto 10px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
@@ -307,6 +309,10 @@ a {
     &--title {
         @extend %title;
         margin-left: 20px;
+        @media screen and (max-width: $media-mobile) {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
     }
     &--subtitle {
         @extend %subtitle;
@@ -315,6 +321,8 @@ a {
         @media screen and (max-width: $media-mobile) {
             font-size: 16px;
             line-height: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
         }
     }
     &--content_block {
@@ -335,6 +343,7 @@ a {
         .slider {
             width: 47%;
             box-sizing: border-box;
+            overflow: hidden;
             @media screen and (max-width: $media-mobile) {
                 width: 100%;
             }
@@ -349,11 +358,10 @@ a {
                     transform: translate(-50%, 0%);
                     top: 7%;
                     z-index: -1;
-                    @media screen and (max-width: 1030px) and (min-width: calc($media-mobile-min - 1px)) {
+                    @media screen and (max-width: 1030px) {
                         display: none;
                     }
                     @media screen and (max-width: $media-mobile-min) {
-                        display: none;
                         width: 100%;
                     }
                 }
@@ -397,7 +405,7 @@ a {
             @media screen and (max-width: $media-mobile) {
                 width: 100%;
                 padding: 0 20px 0 20px;
-                margin-left: 10px;
+                margin-left: 0px;
             }
             &--title {
                 text-transform: uppercase;
@@ -455,10 +463,18 @@ a {
     &--title {
         @extend %title;
         margin-left: 40px;
+        @media screen and (max-width: $media-mobile) {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
     }
     &--subtitle {
         @extend %subtitle;
         margin-bottom: 107px;
+        @media screen and (max-width: $media-mobile) {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
         @media screen and (max-width: $media-mobile-min) {
             margin-bottom: 50px;
         }
@@ -503,10 +519,18 @@ a {
         @extend %title;
         margin-left: 0px;
         letter-spacing: 0.13rem;
+        @media screen and (max-width: $media-mobile) {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
     }
     &--subtitle {
         @extend %subtitle;
         margin-bottom: 108px;
+        @media screen and (max-width: $media-mobile) {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
         @media screen and (max-width: $media-mobile-min) {
             margin-bottom: 50px;
         }
@@ -787,12 +811,20 @@ a {
     &--title {
         @extend %title;
         margin-left: 5px;
+        @media screen and (max-width: $media-mobile) {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
     }
     &--subtitle {
         @extend %subtitle;
         margin-bottom: 107px;
         @media screen and (max-width: $media-mobile-min) {
             margin-bottom: 50px;
+        }
+        @media screen and (max-width: $media-mobile) {
+            margin-left: 10px;
+            margin-right: 10px;
         }
     }
     &--content_block {
@@ -920,10 +952,18 @@ a {
         @extend %title;
         margin-left: 0px;
         letter-spacing: 0.125rem;
+        @media screen and (max-width: $media-mobile) {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
     }
     &--subtitle {
         @extend %subtitle;
         margin-bottom: 35px;
+        @media screen and (max-width: $media-mobile) {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
     }
     &--content_block {
         @include flex();
