@@ -1,3 +1,7 @@
+# Ignore folder nameв "assets/images"
+assets/images/
+
+logs
 # Logs
 logs
 *.log

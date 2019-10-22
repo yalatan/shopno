@@ -113,7 +113,6 @@ a {
   text-decoration: none;
 }
 .container {
-  max-width: 1440px;
   min-width: 319px;
   margin-left: auto;
   margin-right: auto;
@@ -280,6 +279,7 @@ a {
   margin-left: auto;
   margin-right: auto;
   margin-top: 134px;
+  max-width: 1152px;
   width: 80%;
 }
 @media screen and (max-width: 1295px) {
@@ -431,6 +431,7 @@ a {
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
+  max-width: 1152px;
 }
 .featured_works--content_block .work {
   width: 370px;
@@ -438,6 +439,14 @@ a {
   margin: 7px;
   overflow: hidden;
   position: relative;
+  transition: all 1s ease;
+}
+.featured_works--content_block .work:hover {
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  transform: scale(0.95);
+  transition: all 1s ease-in;
 }
 .our_services {
   text-align: center;
@@ -478,6 +487,7 @@ a {
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
+  max-width: 1296px;
 }
 .our_services--content_block .work {
   margin: 7px;
@@ -506,6 +516,65 @@ a {
 .our_services--content_block .work .content--link:hover {
   text-shadow: 0px 5px 20px #000000;
   color: #71f5ea;
+}
+.our_services .open_work {
+  background-color: #71f5ea;
+  width: 100%;
+  height: 100%;
+  padding: 40px 20px 20px 20px;
+  box-sizing: border-box;
+  z-index: 15;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+.our_services .open_work.open {
+  visibility: visible;
+  opacity: 1;
+  transition: all 1s ease;
+}
+@media screen and (max-width: 758px) {
+  .our_services .open_work {
+    height: max-content;
+  }
+}
+.our_services .open_work--content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.our_services .open_work .title {
+  font-family: "Merriweather", serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 2;
+  margin-bottom: 15px;
+  letter-spacing: 0.09rem;
+  color: #1d4b47;
+}
+.our_services .open_work .text {
+  font-size: 17px;
+  line-height: 28px;
+  font-weight: normal;
+  font-family: "Raleway", sans-serif;
+  z-index: 2;
+  margin-bottom: 20px;
+  letter-spacing: 0.019rem;
+  margin-bottom: 25px;
+  color: #1d4b47;
+  margin-top: 29px;
+}
+.our_services .open_work svg {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
 }
 .our_services .work-1 {
   background-color: #71f5ea;
@@ -717,6 +786,7 @@ a {
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
+  max-width: 1296px;
   width: 90%;
 }
 @media screen and (max-width: 1295px) {
@@ -860,6 +930,7 @@ a {
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
+  max-width: 1440px;
   width: 88%;
   height: 600px;
 }

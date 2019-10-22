@@ -35,17 +35,7 @@ function ready() {
     }
 
 
-    var mySwiper = new Swiper('.swiper-container', {
-        // Optional parameters
-        loop: true,
 
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
-
-
-    });
 
 
     /*popup*/
@@ -79,6 +69,25 @@ function ready() {
 
                 }
             };
+        }
+    });
+
+    /*open work*/
+    document.querySelectorAll(".content--link").forEach(function(item) {
+        item.onclick = function(e) {
+            e.preventDefault();
+            console.log(item.parentNode.parentNode.querySelector(".open_work"));
+            item.parentNode.parentNode.querySelector(".open_work").classList.add("open");
+
+        }
+
+    });
+    /*  close_work*/
+    document.querySelectorAll(".close_work").forEach(function(item) {
+        item.onclick = function(e) {
+            e.preventDefault();
+            console.log(item.parentNode);
+            item.parentNode.parentNode.classList.remove("open");
         }
     });
 

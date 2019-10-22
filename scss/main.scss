@@ -186,7 +186,7 @@ a {
 /*header*/
 
 .container {
-    max-width: $max-width;
+    /* max-width: $max-width;*/
     min-width: $min-width;
     @include center();
     font-family: $font-family-montserrat;
@@ -321,6 +321,7 @@ a {
         @include flex(flex-start, center);
         @include center();
         margin-top: 134px;
+        max-width: ($max-width * 0.8);
         width: 80%;
         @media screen and (max-width: $media-mobile-middle) {
             width: 100%;
@@ -348,6 +349,9 @@ a {
                     transform: translate(-50%, 0%);
                     top: 7%;
                     z-index: -1;
+                    @media screen and (max-width: 1030px) and (min-width: calc($media-mobile-min - 1px)) {
+                        display: none;
+                    }
                     @media screen and (max-width: $media-mobile-min) {
                         display: none;
                         width: 100%;
@@ -358,6 +362,16 @@ a {
                     @extend %absoluteCenter;
                     transform: translate(-50%, 0%);
                     top: 0;
+                    @media screen and (max-width: 900px) and (min-width: 870px) {
+                        min-width: 395px;
+                        min-height: 486px;
+                    }
+                    @media screen and (max-width: 869px) and (min-width: 759px) {
+                        width: 100%;
+                    }
+                    @media screen and (max-width: 758px) {
+                        /*  width: auto;*/
+                    }
                 }
             }
         }
@@ -453,13 +467,20 @@ a {
         @include flex();
         flex-wrap: wrap;
         @include center();
+        max-width: ($max-width * 0.8);
         .work {
             @include size(370px, 360px);
             margin: 7px;
             overflow: hidden;
             position: relative;
+            transition: all 1s ease;
             img {
                 @extend %absoluteCenter;
+            }
+            &:hover {
+                @include box-shadow( 3px 3px 5px 6px #ccc);
+                transform: scale(0.95);
+                transition: all 1s ease-in;
             }
         }
     }
@@ -494,6 +515,7 @@ a {
         @include flex(flex-start, center);
         flex-wrap: wrap;
         @include center();
+        max-width: ($max-width * 0.9);
         .work {
             margin: 7px;
             overflow: hidden;
@@ -524,6 +546,7 @@ a {
                 }
                 &--link {
                     @extend %our_services-link;
+                    transition: all 1s ease;
                     span {
                         margin-left: 15px;
                         font-size: 20px;
@@ -531,20 +554,37 @@ a {
                     &:hover {
                         text-shadow: 0px 5px 20px #000000;
                         color: $bg-blue;
+                        transition: all 1s ease;
                     }
                 }
             }
         }
     }
-    .work-1 {
+    .open_work {
         background-color: $bg-blue;
-        height: 422px;
-        width: 652px;
-        padding: 63px 8% 0 64px;
+        @include size();
+        padding: 40px 20px 20px 20px;
         box-sizing: border-box;
+        z-index: 15;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /*display: none;*/
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1s ease-out;
+        &.open {
+            visibility: visible;
+            opacity: 1;
+            transition: all 1s ease;
+        }
         @media screen and (max-width: $media-mobile) {
-            padding: 40px 20px 20px 20px;
-            height: max-content;
+            height: 100%;
+        }
+        &--content {
+            @include size();
+            @include flex(flex-start, flex-start);
+            flex-direction: column;
         }
         .title {
             font-family: $font-family-merriweather;
@@ -562,16 +602,42 @@ a {
             font-weight: normal;
             font-family: $font-family-raleway;
             z-index: 2;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             letter-spacing: 0.019rem;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             color: #1d4b47;
             margin-top: 29px;
         }
         svg {
-            margin: 54px auto 30px auto;
-            @media screen and (max-width: $media-mobile) {
-                margin: 15px auto 10px auto;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+    }
+    .work-1 {
+        height: 422px;
+        width: 652px;
+        .work--picture {
+            top: 53%;
+            left: 51%;
+            width: 81%;
+        }
+        .content {
+            left: 66px;
+            bottom: 9px;
+            width: 65%;
+            &--title {
+                margin-bottom: 19px;
+            }
+            &--text {
+                margin-bottom: 44px;
+            }
+            &--link {
+                letter-spacing: 0.1rem;
+                span {
+                    margin-left: 10px;
+                    font-size: 20px;
+                }
             }
         }
     }
@@ -679,6 +745,7 @@ a {
             &--link {
                 letter-spacing: 0.07rem;
                 margin-left: 5px;
+                width: max-content;
             }
         }
     }
@@ -732,6 +799,7 @@ a {
         @include flex(flex-start, center);
         flex-wrap: wrap;
         @include center();
+        max-width: ($max-width * 0.9);
         width: 90%;
         @media screen and (max-width: $media-mobile-middle) {
             width: 100%;
@@ -759,6 +827,9 @@ a {
             &--foto {
                 height: 100%;
                 @extend %absoluteCenter;
+                &.another_foto {
+                    height: 106%;
+                }
             }
             &--dropdown {
                 @include size(90%, 54.5%);
@@ -858,6 +929,7 @@ a {
         @include flex();
         flex-wrap: wrap;
         @include center();
+        max-width: $max-width;
         width: 88%;
         height: 600px;
         @media screen and (max-width: 1000px) {
@@ -874,6 +946,8 @@ a {
                 background-color: #ffffff;
                 border-radius: 2px;
                 @include box-shadow( 4px 7px 6px rgba(80, 80, 80, 0.3));
+                transition: all 1s ease;
+                outline: none;
                 svg {
                     path {
                         fill: #000;
@@ -887,6 +961,7 @@ a {
                 }
                 &:hover {
                     background-color: #71f6eb;
+                    transition: all 1s ease;
                     svg {
                         path {
                             opacity: 1;
@@ -903,6 +978,8 @@ a {
                 border-radius: 2px;
                 @include flex();
                 @include box-shadow( 4px 7px 6px rgba(80, 80, 80, 0.3));
+                transition: all 1s ease;
+                outline: none;
                 @media screen and (max-width: 1000px) {
                     left: 38px;
                 }
@@ -918,6 +995,7 @@ a {
                 }
                 &:hover {
                     background-color: #71f6eb;
+                    transition: all 1s ease;
                     svg {
                         path {
                             opacity: 1;
@@ -1068,7 +1146,7 @@ a {
 .client_logos {
     width: 100%;
     @include flex(center, center);
-    padding: 107px 50px;
+    padding: 107px 152px;
     box-sizing: border-box;
     background-color: $color-white;
     &--picture {
@@ -1267,9 +1345,11 @@ a {
                 margin: 3.5px;
                 color: #bbb8b9;
                 font-size: 20px;
+                transition: all 1s ease-out;
                 &:hover {
                     color: #081e1c;
                     background-color: #6eeee4;
+                    transition: all 1s ease;
                 }
             }
         }
@@ -1277,6 +1357,8 @@ a {
             font-family: $font-family-raleway;
             font-size: 16px;
             color: $color-white;
+            opacity: 0.5;
+            letter-spacing: 0.01rem;
         }
     }
 }
