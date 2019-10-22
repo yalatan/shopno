@@ -351,6 +351,7 @@ a {
                 width: 100%;
                 height: 550px;
                 position: relative;
+                overflow: hidden;
                 .background {
                     @include size(90%, 75%);
                     background-color: #edeef0;
@@ -392,8 +393,10 @@ a {
                 height: 10px;
                 margin: 0 3px;
                 border-radius: 2px;
+                cursor: pointer;
                 &-active {
                     background-color: #71f6eb;
+                    cursor: default;
                 }
             }
         }
@@ -619,6 +622,11 @@ a {
             margin-bottom: 15px;
             letter-spacing: 0.09rem;
             color: #1d4b47;
+            @media screen and (max-width: $media-mobile) {
+                font-size: 18px;
+                line-height: 20px;
+                margin-bottom: 10px;
+            }
         }
         .text {
             font-size: 17px;
@@ -626,11 +634,14 @@ a {
             font-weight: normal;
             font-family: $font-family-raleway;
             z-index: 2;
-            margin-bottom: 20px;
             letter-spacing: 0.019rem;
             margin-bottom: 25px;
             color: #1d4b47;
             margin-top: 29px;
+            @media screen and (max-width: $media-mobile) {
+                font-size: 16px;
+                line-height: 20px;
+            }
         }
         svg {
             position: absolute;
@@ -742,7 +753,7 @@ a {
                 margin-bottom: 19px;
             }
             &--text {
-                margin-bottom: 75px;
+                margin-bottom: 52px;
                 letter-spacing: -0.01rem;
             }
         }
@@ -770,6 +781,7 @@ a {
                 letter-spacing: 0.07rem;
                 margin-left: 5px;
                 width: max-content;
+                cursor: pointer;
             }
         }
     }
@@ -1300,6 +1312,9 @@ a {
                 width: 100%;
                 @include flex(center,
                 flex-start);
+                @media screen and (max-width: $media-mobile-min) {
+                    justify-content: center;
+                }
                 .btn {
                     @include flex();
                     @extend %button;
